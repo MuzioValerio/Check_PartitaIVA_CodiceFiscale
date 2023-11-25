@@ -10,15 +10,15 @@ Esempio di codice:
 ```delphi
 procedure ControlloCodicefiscale(const aSrcValue: string);  
 begin  
-    var lValore := TCheckCodiceFiscale.New.ControlTaxIdCodice(aSrcValue);  
-    EditCDControllo.Text := lValore;  
+  var lValore := TCheckCodiceFiscale.New.ControlTaxIdCodice(aSrcValue);  
+  EditCDControllo.Text := lValore;  
 end;  
 
 procedure ControlloPIVA(const aSrcValue: string);  
 begin  
-    var lChecker := TCheckPartitaIVA.New.CalculateVatcontrolNumber(aSrcValue);  
-    EditValoreControllo.Text := lChecker.GetControlNumber.ToString;  
-    EditPartitaCompleta.Text := lChecker.GestDestVatNumber;  
+  var lChecker := TCheckPartitaIVA.New.CalculateVatcontrolNumber(aSrcValue);  
+  EditValoreControllo.Text := lChecker.GetControlNumber.ToString;  
+  EditPartitaCompleta.Text := lChecker.GestDestVatNumber;  
 end;
 ```
 
