@@ -8,11 +8,11 @@ per effettuare i controlli
 
 Esempio di codice:
 
-`procedure ControlloCodicefiscale(const aSrcValue: string);  
-begin  
-    var lValore := TCheckCodiceFiscale.New.ControlTaxIdCodice(aSrcValue);  
-    EditCDControllo.Text := lValore;  
-end;  `
+`procedure ControlloCodicefiscale(const aSrcValue: string);  `
+`begin  `
+ `   var lValore := TCheckCodiceFiscale.New.ControlTaxIdCodice(aSrcValue);  `
+ `   EditCDControllo.Text := lValore;  `
+`end;  `
 
 procedure ControlloPIVA(const aSrcValue: string);  
 begin  
