@@ -102,6 +102,8 @@
             <Form>frmMain</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="..\..\Core\VM.CodiceFiscale.Classes.pas"/>
+        <DCCReference Include="..\..\Core\VM.PartitaIVA.Classes.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

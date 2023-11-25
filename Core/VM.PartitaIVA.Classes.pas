@@ -22,9 +22,8 @@ uses
 type
   ICheckPartitaIVA = interface(IInterface)
   ['{3080F95D-602D-4E6C-89C0-5E38629AC661}']
-    function CalculateVatControlNumber(const aSrcValue: string): Integer;
-    function VerifyVatControlNumber(const aSrcValue: string): Integer;
-    procedure SetDestVatNumber(const AValue: string);
+    function CalculateVatControlNumber(const aSrcValue: string): ICheckPartitaIVA;
+    function VerifyVatControlNumber(const aSrcValue: string): ICheckPartitaIVA;
     function GetDestVatNumber: string;
     function GetControlNumber: Integer;
   end;
@@ -48,7 +47,6 @@ type
 
     function GetDestVatNumber: string;
     function GetControlNumber: Integer;
-    procedure SetDestVatNumber(const AValue: string);
   public
     class function New: ICheckPartitaIVA;
   end;
@@ -113,7 +111,7 @@ begin
 
   FControlNumber := CalcControlNumber(FOddSummary, FEvenSummary, True);
   if FControlNumber = 0 then
-    Exit(FControlNumber);
+    Exit(Self);
 
   CalculateVatControlNumber(FSrcVatNumber.Substring(0, 10));
   Result := Self;
@@ -132,7 +130,7 @@ end;
 
 function TCheckPartitaIVA.IsOnlyNumbers: Boolean;
 begin
-  for var I := 0 to FSrcVatNumber.Length-1 do
+  for var I := Low(FSrcVatNumber) to High(FSrcVatNumber) do
   begin
     if not Ord(FSrcVatNumber[I]) in [48..57] then
       Exit(False);
